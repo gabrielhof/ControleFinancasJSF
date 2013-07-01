@@ -1,14 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns = "http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
-	<h:head>
-		<title>Teste</title>
-	</h:head>
-	<h:body>
+<ui:composition template="template.xhtml" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
 		<h:form>
-			<p><span>Valor:</span><span>#{testeBean.numero}</span></p>
-			<h:inputText value="#{testeBean.texto}" />
-			<h:commandButton value="Faz Algo" action="#{testeBean.fazAlgumaCoisa}" />
-			<h:commandLink value="Faz o mesmo algo" action="#{testeBean.fazAlgumaCoisa}"/>
+			<p:schedule id="agendaGastos" value="#{agendaBean.scheduleModel}">
+			</p:schedule>
 		</h:form>
-	</h:body>
-</html>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<title>Controle de Finanças</title>
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+	</h:head>
+	<h:body>
+		<div class="container-narrow">
+			<div class="masthead">
+				<ui:include src="menu.xhtml" />
+		 		
+		 		<h3 class="muted">Controle de Finanças</h3>
+		 	</div>
+		 		
+		 	<hr />
+		 		
+		 	<ui:insert name="content" />
+		 		
+		 	<hr />
+
+			<div class="footer">
+				<p>&copy; CFJSF - 2013</p>
+			</div>
+		</div>
+		
+		<p:confirmDialog id="confirmLogoffDialog" message="Tem certeza que deseja sair?" header="Deseja sair?" severity="alert" widgetVar="logoffDialog">
+			<h:form>
+				<p:commandButton id="confirmLogoff" value="Sim" action="#{loginBean.doLogoff}" />
+				<p:commandButton id="cancelLogoff" value="Não" onclick="logoffDialog.hide()" type="button" />
+			</h:form>
+		</p:confirmDialog>
+		
+		<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	</h:body>
+</html>
